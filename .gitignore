@@ -3,6 +3,7 @@
 *.cache
 *.classpath
 *.project
+
 # Log file
 *.log
 console.properties
@@ -31,3 +32,9 @@ Reports/
 Apps/
 /settings/
 .DS_Store
+/.vscode/
+*.gradle
+/.cache/
+output
+!output/.gitkeep
+build
