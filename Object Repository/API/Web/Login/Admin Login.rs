@@ -30,7 +30,7 @@
    <migratedVersion>5.4.1</migratedVersion>
    <path></path>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>https://msb.kmsmoba.com/dev/api/user/admin/authenticate</restUrl>
+   <restUrl>${baseUrl}/user/admin/authenticate</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -53,6 +53,13 @@
       <masked>false</masked>
       <name>password</name>
    </variables>
+   <variables>
+      <defaultValue>GlobalVariable.baseUrl</defaultValue>
+      <description></description>
+      <id>dd224b89-1d22-414f-94e0-bfdb47497747</id>
+      <masked>false</masked>
+      <name>baseUrl</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -66,15 +73,15 @@ import internal.GlobalVariable as GlobalVariable
 RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
-
-WS.verifyResponseStatusCode(response, 200)
-
-assertThat(response.getStatusCode()).isEqualTo(200)
-
-assertThat(response.getStatusCode()).isIn(Arrays.asList(200, 201, 202))
-
-String jsPass = 
-&quot;&quot;&quot;
+try {
+	WS.verifyResponseStatusCode(response, 200)
+	
+	assertThat(response.getStatusCode()).isEqualTo(200)
+	
+	assertThat(response.getStatusCode()).isIn(Arrays.asList(200, 201, 202))
+	
+	String jsPass =
+	&quot;&quot;&quot;
 {
   &quot;\$schema&quot;: &quot;http://json-schema.org/draft-07/schema#&quot;,
   &quot;title&quot;: &quot;Generated schema for Root&quot;,
@@ -93,6 +100,10 @@ String jsPass =
   ]
 };
 &quot;&quot;&quot;
-boolean successful = WS.validateJsonAgainstSchema(response,jsPass)</verificationScript>
+	boolean successful = WS.validateJsonAgainstSchema(response,jsPass)
+}catch(Exception e) {
+	throw &quot;API invalid&quot;
+}
+</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

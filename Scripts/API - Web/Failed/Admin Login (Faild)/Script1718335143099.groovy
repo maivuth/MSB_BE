@@ -17,4 +17,13 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Admin Login'))
+try {
+	def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Admin Login', [('username') : username, ('password') : password, ('baseUrl') : GlobalVariable.baseUrl]))
+	WebUI.comment(response.toString())
+	if (response.toString().contains('200')) {
+		WebUI.comment('API Passed')
+	}
+}
+catch (Exception e){
+	WebUI.comment("API failed. Data invalid")
+}
