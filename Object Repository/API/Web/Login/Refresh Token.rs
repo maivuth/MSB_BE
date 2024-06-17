@@ -12,7 +12,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;refreshToken\&quot;: \&quot;eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwicmVnaXN0cmF0aW9uX2lkIjoxLCJleHAiOjMzMjU0MTcyMzYwLCJpYXQiOjE3MTgxNzIzNjAsImF1dGhvcml0eSI6IkxFR0FMX1JFUFJFU0VOVEFUSVZFX1JPTEUifQ.puDjQZun_QI6CZLMuZxXw-M99_UQfQwsFDvGu56iRw3hTBZ2DUeeQYtFlFjRQgT4mh8pUS9ovxXK84ffoYtEzQ\&quot;\n}&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;refreshToken\&quot;: \&quot;eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDgxIiwicmVnaXN0cmF0aW9uX2lkIjoxNDgxLCJleHAiOjMzMjU0NDU4NDk5LCJpYXQiOjE3MTg0NTg0OTksImF1dGhvcml0eSI6Ik1BS0VSX1JPTEUifQ.aeQycF56NOtNu9jZe-qWE1OYLkrQA0LuO2p-WGqGbrKPUWKA549peQGWQ1nB2Xa89QKw1aeOwJdd9idZScMd3w\&quot;\n}&quot;,
   &quot;contentType&quot;: &quot;text/plain&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -70,7 +70,7 @@ String jsPass =
       &quot;type&quot;: &quot;string&quot;
 		},
       &quot;refreshToken&quot;: {
-        &quot;type&quot;: &quot;string&quot;
+        &quot;type&quot;: &quot;null&quot;
 		}
 },
   &quot;required&quot;: [

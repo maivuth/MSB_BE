@@ -16,20 +16,19 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import groovy.json.JsonSlurper
+import groovy.json.JsonSlurper as JsonSlurper
 
-def response = WS.sendRequest(findTestObject('API/Web/Login/Admin Login', [('username') : username, ('password') : password, ('baseUrl') : GlobalVariable.baseUrl]))
+def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Marker Login', [('baseUrl') : baseUrl, ('taxCode') : taxCode
+            , ('phone') : phone, ('otp') : otp]))
 
-WebUI.comment(response.getStatusCode().toString())
+def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
 
-try {if(WS.verifyResponseStatusCode(response, 200)) {
-		WebUI.comment('API Passed')
-		'Extract data from the JSON response'
-		def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
-		def bearerToken = jsonResponse.accessToken.toString()
-		WebUI.comment(bearerToken)
-	}
-}
-catch(Exception e) {
-	WebUI.comment("API failed with error ${response.getStatusCode().toString()}")
-}
+// Extract data from the JSON response
+def bearerToken = jsonResponse.accessToken.toString()
+
+WebUI.comment(bearerToken.toString())
+
+WS.sendRequestAndVerify(findTestObject('API/Web/Landing/Get Enterprise Accounts', 
+	[('baseUrl') : baseUrl, 
+	 ('bearerToken') : bearerToken]))
+

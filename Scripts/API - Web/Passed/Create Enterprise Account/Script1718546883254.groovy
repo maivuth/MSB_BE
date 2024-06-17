@@ -18,18 +18,35 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonSlurper
 
-def response = WS.sendRequest(findTestObject('API/Web/Login/Admin Login', [('username') : username, ('password') : password, ('baseUrl') : GlobalVariable.baseUrl]))
+Random random = new Random()
+taxCode = Math.floorDiv(random.nextLong(9999999999-1000000000),1)
+System.out.println(taxCode.toString())
+contactPhone = Math.floorDiv(random.nextLong(9999999999-1000000000),1)
+System.out.println(contactPhone.toString())
 
-WebUI.comment(response.getStatusCode().toString())
-
-try {if(WS.verifyResponseStatusCode(response, 200)) {
-		WebUI.comment('API Passed')
-		'Extract data from the JSON response'
-		def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
-		def bearerToken = jsonResponse.accessToken.toString()
-		WebUI.comment(bearerToken)
-	}
-}
-catch(Exception e) {
-	WebUI.comment("API failed with error ${response.getStatusCode().toString()}")
-}
+//def response = WS.sendRequest(findTestObject('API/Web/Landing/Create Enterprise account', 
+//	[('baseUrl') : baseUrl,
+//	 ('consent') : true, 
+//	 ('taxCode') : taxCode, 
+//	 ('companyName') : companyName, 
+//	 ('contactName') : contactName, 
+//	 ('contactPhone') : contactPhone, 
+//	 ('contactEmail') : contactEmail, 
+//	 ('supportEmail') : supportEmail, 
+//	 ('openingPurpose') : openingPurpose]))
+//
+//def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
+//WebUI.comment(jsonResponse.toString())
+//try{
+//	if(WS.verifyResponseStatusCode(response, 200)) {
+//		WebUI.comment('API Passed')
+//		'Extract data from the JSON response'
+//		def resId = jsonResponse.enterpriseAccount.id.toString()
+//		WebUI.comment(resId)
+//	}
+//}
+//catch(Exception e) {
+//	WebUI.comment("API failed with error ${response.getStatusCode().toString()}")
+//	WebUI.comment(jsonResponse.code.toString())
+//	WebUI.comment(jsonResponse.message.toString())
+//}

@@ -12,7 +12,7 @@
    <followRedirects>false</followRedirects>
    <httpBody></httpBody>
    <httpBodyContent>{
-  &quot;text&quot;: &quot;{\n    \&quot;taxCode\&quot;: \&quot;1234567891\&quot;,\n    \&quot;phone\&quot;: \&quot;5551234551\&quot;,\n    \&quot;otp\&quot;: \&quot;123456\&quot;\n   }&quot;,
+  &quot;text&quot;: &quot;{\n    \&quot;taxCode\&quot;: \&quot;${taxCode}\&quot;,\n    \&quot;phone\&quot;: \&quot;${phone}\&quot;,\n    \&quot;otp\&quot;: \&quot;${otp}\&quot;\n   }&quot;,
   &quot;contentType&quot;: &quot;text/plain&quot;,
   &quot;charset&quot;: &quot;UTF-8&quot;
 }</httpBodyContent>
@@ -30,7 +30,7 @@
    <migratedVersion>5.4.1</migratedVersion>
    <path></path>
    <restRequestMethod>POST</restRequestMethod>
-   <restUrl>http://msb.kmsmoba.com/dev/api/user/maker/authenticate</restUrl>
+   <restUrl>${baseUrl}/user/maker/authenticate</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -39,6 +39,34 @@
    <soapServiceFunction></soapServiceFunction>
    <socketTimeout>0</socketTimeout>
    <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>GlobalVariable.baseUrl</defaultValue>
+      <description></description>
+      <id>f5ca5274-5ae7-4cb4-bf86-acb3c05cef0f</id>
+      <masked>false</masked>
+      <name>baseUrl</name>
+   </variables>
+   <variables>
+      <defaultValue>'1234567891'</defaultValue>
+      <description></description>
+      <id>d112cf59-969f-4555-9b77-54fa481afc07</id>
+      <masked>false</masked>
+      <name>taxCode</name>
+   </variables>
+   <variables>
+      <defaultValue>'5551234551'</defaultValue>
+      <description></description>
+      <id>7cf49ded-7ca0-4be5-ac89-66d464dae255</id>
+      <masked>false</masked>
+      <name>phone</name>
+   </variables>
+   <variables>
+      <defaultValue>'123456'</defaultValue>
+      <description></description>
+      <id>7ac56785-61aa-400e-8388-739fce9a7c9d</id>
+      <masked>false</masked>
+      <name>otp</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -54,7 +82,7 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
 WS.verifyResponseStatusCode(response, 200)
-
+try {
 assertThat(response.getStatusCode()).isEqualTo(200)
 
 assertThat(response.getStatusCode()).isIn(Arrays.asList(200, 201, 202))
@@ -79,6 +107,10 @@ String jsPass =
   ]
 };
 &quot;&quot;&quot;
-boolean successful = WS.validateJsonAgainstSchema(response,jsPass)</verificationScript>
+boolean successful = WS.validateJsonAgainstSchema(response,jsPass)
+}
+catch(Exception e) {
+	throw &quot;API invalid&quot;
+}</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

@@ -16,20 +16,13 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import groovy.json.JsonSlurper
 
-def response = WS.sendRequest(findTestObject('API/Web/Login/Admin Login', [('username') : username, ('password') : password, ('baseUrl') : GlobalVariable.baseUrl]))
+def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Marker Login', [('baseUrl') : baseUrl
+            , ('taxCode') : taxCode, ('phone') : phone, ('otp') : otp]))
 
-WebUI.comment(response.getStatusCode().toString())
+WebUI.comment(response.toString())
 
-try {if(WS.verifyResponseStatusCode(response, 200)) {
-		WebUI.comment('API Passed')
-		'Extract data from the JSON response'
-		def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
-		def bearerToken = jsonResponse.accessToken.toString()
-		WebUI.comment(bearerToken)
-	}
+if (response.toString().contains('200')) {
+    WebUI.comment('API Passed')
 }
-catch(Exception e) {
-	WebUI.comment("API failed with error ${response.getStatusCode().toString()}")
-}
+

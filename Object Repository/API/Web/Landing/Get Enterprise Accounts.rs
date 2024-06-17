@@ -11,7 +11,7 @@
       <authorizationInfo>
          <entry>
             <key>bearerToken</key>
-            <value>eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzE2IiwicmVnaXN0cmF0aW9uX2lkIjoxMzE2LCJleHAiOjE3MjE4NzQ1NzIsImlhdCI6MTcxODI3NDU3MiwiYXV0aG9yaXR5IjoiTUFLRVJfUk9MRSJ9.zpHNHIQi-yygPWtuZSITUMUCkTTF0c1gptcZZhFndcPyJAQWLFSlnMNA9cI6TGlBNXIpBEn4fie7JXJ_6a4OfA</value>
+            <value>${bearerToken}</value>
          </entry>
       </authorizationInfo>
       <authorizationType>Bearer</authorizationType>
@@ -39,15 +39,15 @@
       <matchCondition>equals</matchCondition>
       <name>Authorization</name>
       <type>Main</type>
-      <value>Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzE2IiwicmVnaXN0cmF0aW9uX2lkIjoxMzE2LCJleHAiOjE3MjE4NzQ1NzIsImlhdCI6MTcxODI3NDU3MiwiYXV0aG9yaXR5IjoiTUFLRVJfUk9MRSJ9.zpHNHIQi-yygPWtuZSITUMUCkTTF0c1gptcZZhFndcPyJAQWLFSlnMNA9cI6TGlBNXIpBEn4fie7JXJ_6a4OfA</value>
-      <webElementGuid>aa60f718-dd48-4840-a74e-b002ab93cfe1</webElementGuid>
+      <value>Bearer ${bearerToken}</value>
+      <webElementGuid>dac720f4-c667-43a9-b088-4214e08fe079</webElementGuid>
    </httpHeaderProperties>
    <katalonVersion>9.5.0</katalonVersion>
    <maxResponseSize>0</maxResponseSize>
    <migratedVersion>5.4.1</migratedVersion>
    <path></path>
    <restRequestMethod>GET</restRequestMethod>
-   <restUrl>https://msb.kmsmoba.com/dev/api/user/enterprise-accounts</restUrl>
+   <restUrl>${baseUrl}/user/enterprise-accounts</restUrl>
    <serviceType>RESTful</serviceType>
    <soapBody></soapBody>
    <soapHeader></soapHeader>
@@ -56,12 +56,27 @@
    <soapServiceFunction></soapServiceFunction>
    <socketTimeout>0</socketTimeout>
    <useServiceInfoFromWsdl>true</useServiceInfoFromWsdl>
+   <variables>
+      <defaultValue>GlobalVariable.baseUrl</defaultValue>
+      <description></description>
+      <id>8bbe65b0-97b6-4bda-922e-925566137481</id>
+      <masked>false</masked>
+      <name>baseUrl</name>
+   </variables>
+   <variables>
+      <defaultValue>'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDgxIiwicmVnaXN0cmF0aW9uX2lkIjoxNDgxLCJleHAiOjE3MjIxNTU5NDYsImlhdCI6MTcxODU1NTk0NiwiYXV0aG9yaXR5IjoiTUFLRVJfUk9MRSJ9.ALlFT0w8YZ5F4hYG-r9ormDS-EllvdrNCW5vLrJBBK9e6rX9TamFjGUvDktXkP7MEs2TnsLg80IUkOQcytMN7A'</defaultValue>
+      <description></description>
+      <id>5a520a33-688f-45d0-a088-de9ed0b08e90</id>
+      <masked>false</masked>
+      <name>bearerToken</name>
+   </variables>
    <verificationScript>import static org.assertj.core.api.Assertions.*
 
 import com.kms.katalon.core.testobject.RequestObject
 import com.kms.katalon.core.testobject.ResponseObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webservice.verification.WSResponseManager
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import groovy.json.JsonSlurper
 import internal.GlobalVariable as GlobalVariable
@@ -80,21 +95,19 @@ String jsonPass =
   &quot;type&quot;: &quot;object&quot;,
   &quot;properties&quot;: {
     &quot;firstName&quot;: {
-      &quot;type&quot;: &quot;string&quot;,
-      &quot;description&quot;: &quot;The person's first name.&quot;
+      &quot;type&quot;: &quot;string&quot;
     },
     &quot;lastName&quot;: {
-      &quot;type&quot;: &quot;string&quot;,
-      &quot;description&quot;: &quot;The person's last name.&quot;
+      &quot;type&quot;: &quot;string&quot;
     },
     &quot;age&quot;: {
-      &quot;description&quot;: &quot;Age in years which must be equal to or greater than zero.&quot;,
       &quot;type&quot;: &quot;integer&quot;,
       &quot;minimum&quot;: 0
     }
   }
 }
 &quot;&quot;&quot;
-boolean successful = WS.validateJsonAgainstSchema(response,jsonPass)</verificationScript>
+boolean successful = WS.validateJsonAgainstSchema(response,jsonPass)
+WebUI.comment(successful.toString())</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
