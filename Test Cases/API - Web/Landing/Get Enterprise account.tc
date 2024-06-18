@@ -51,21 +51,21 @@
       <name>bearerToken</name>
    </variable>
    <variable>
-      <defaultValue>'1234567891'</defaultValue>
+      <defaultValue>'5555923668'</defaultValue>
       <description></description>
       <id>ee880442-af06-4bd8-a20d-787a5c59f20a</id>
       <masked>false</masked>
       <name>taxCode</name>
    </variable>
    <variable>
-      <defaultValue>'5551234551'</defaultValue>
+      <defaultValue>'8439055668'</defaultValue>
       <description></description>
       <id>5bc95af8-005a-4c0d-81ab-44e14cda9c28</id>
       <masked>false</masked>
       <name>phone</name>
    </variable>
    <variable>
-      <defaultValue>'123456'</defaultValue>
+      <defaultValue>GlobalVariable.otp</defaultValue>
       <description></description>
       <id>93234e9f-4249-4f70-8e01-e56ed4b97693</id>
       <masked>false</masked>

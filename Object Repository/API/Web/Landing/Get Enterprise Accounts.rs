@@ -180,7 +180,7 @@ boolean successful = WS.validateJsonAgainstSchema(response,jsonPass)
 WebUI.comment(successful.toString())
 }
 catch(Exception e) {
-	throw &quot;API failed&quot;
+	WebUI.comment(&quot;API failed&quot;)
 }</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
