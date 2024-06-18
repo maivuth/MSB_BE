@@ -21,7 +21,7 @@ import groovy.json.JsonSlurper as JsonSlurper
 WebUI.callTestCase(findTestCase('API - Web/OTP/Send OTP'), [('baseUrl') : GlobalVariable.baseUrl, ('phone') : phone], FailureHandling.STOP_ON_FAILURE)
 
 def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Marker Login', [('baseUrl') : baseUrl, ('taxCode') : taxCode
-			, ('phone') : phone, ('otp') : otp]))
+            , ('phone') : phone, ('otp') : otp]))
 
 def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
 
@@ -31,5 +31,8 @@ bearerToken = jsonResponse.accessToken.toString()
 WebUI.comment(bearerToken.toString())
 
 WS.sendRequestAndVerify(findTestObject('API/Web/Choose Account/Create Registration Account', [('baseUrl') : baseUrl
-			, ('bearerToken') : bearerToken
-			, ('province') : province, ('district') : district, ('branch') : branch, ('accountNumber') : accountNumber, ('accountType') : accountType]))
+            , ('bearerToken') : bearerToken
+            , ('province') : province, ('district') : district, ('branch') : branch, ('accountNumber') : accountNumber, ('accountType') : accountType]))
+
+WS.sendRequestAndVerify(findTestObject('API/Web/Choose Account/Get Registration Account', [('baseUrl') : baseUrl
+            , ('bearerToken') : bearerToken]))

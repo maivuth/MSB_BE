@@ -1,138 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Choose Account - Random Number</name>
+   <name>Get Registration Account</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>e82f91b2-e8e2-4eca-8dc3-1b7bb6097d01</testCaseGuid>
+   <testCaseGuid>fc367b64-b54a-40d5-9aba-4e102ec0413f</testCaseGuid>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>35afec34-5909-464b-a97e-cf8faccb5d3c</variableId>
+      <variableId>45c3ff87-4c6f-4704-9386-75306e36e92d</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>64586b5f-03bd-4627-97d9-9d74cff3a397</variableId>
+      <variableId>32716946-bfc3-4fb0-be79-b657d22511ad</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>1dbf7331-d1a5-447b-acb0-4531ff705b23</variableId>
+      <variableId>c3403fbf-9bdb-4278-b93b-7166d5c30cd3</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>6eea6de4-4baa-466a-9607-a179d91e39dc</variableId>
+      <variableId>fff50416-b79c-4449-8856-0998f2c1281a</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>c67cae37-0699-4a2a-a80e-e826bc792185</variableId>
+      <variableId>97eeabec-9fc0-40e3-be4a-ff16f1a4ae97</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>050ed0bf-abc4-4c2c-9e63-29e99a9337a6</variableId>
+      <variableId>9c1e19cf-e669-4309-a69c-057ee12d397f</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>369256a8-52e0-4379-9112-e29dee085c1a</variableId>
+      <variableId>e000a1fe-fd43-4e62-9038-7ca53c1d7e63</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>ba077c68-bb07-4a13-bcdb-e9399e164666</variableId>
+      <variableId>85284f34-97a6-4773-a6a0-381e4fccd92b</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>e7078ced-8065-4138-a68e-54b692d59b55</variableId>
+      <variableId>86baef8c-90cd-47bd-a14b-9b5e4f4a80c0</variableId>
    </variableLinks>
    <variableLinks>
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
-      <variableId>15d48ea2-9c83-4939-b2f8-950fae67a2d1</variableId>
+      <variableId>32da3e61-a32e-4939-8813-94737d4749cf</variableId>
    </variableLinks>
    <variable>
       <defaultValue>GlobalVariable.baseUrl</defaultValue>
       <description></description>
-      <id>35afec34-5909-464b-a97e-cf8faccb5d3c</id>
+      <id>45c3ff87-4c6f-4704-9386-75306e36e92d</id>
       <masked>false</masked>
       <name>baseUrl</name>
    </variable>
    <variable>
       <defaultValue>'5555923668'</defaultValue>
       <description></description>
-      <id>64586b5f-03bd-4627-97d9-9d74cff3a397</id>
+      <id>32716946-bfc3-4fb0-be79-b657d22511ad</id>
       <masked>false</masked>
       <name>taxCode</name>
    </variable>
    <variable>
       <defaultValue>'8439055668'</defaultValue>
       <description></description>
-      <id>1dbf7331-d1a5-447b-acb0-4531ff705b23</id>
+      <id>c3403fbf-9bdb-4278-b93b-7166d5c30cd3</id>
       <masked>false</masked>
       <name>phone</name>
    </variable>
    <variable>
       <defaultValue>GlobalVariable.otp</defaultValue>
       <description></description>
-      <id>6eea6de4-4baa-466a-9607-a179d91e39dc</id>
+      <id>fff50416-b79c-4449-8856-0998f2c1281a</id>
       <masked>false</masked>
       <name>otp</name>
    </variable>
    <variable>
-      <defaultValue>''</defaultValue>
-      <description>eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDgxIiwicmVnaXN0cmF0aW9uX2lkIjoxNDgxLCJleHAiOjE3MjIyMTM5MDcsImlhdCI6MTcxODYxMzkwNywiYXV0aG9yaXR5IjoiTUFLRVJfUk9MRSJ9.QfVBEVdSrk3g30yfqiXD_2KxZYE74aBAM60V2janvLX2tyTz-wlxeA2D_oTBmyKsUBB9odVg7slI1eflWIMG6w</description>
-      <id>c67cae37-0699-4a2a-a80e-e826bc792185</id>
+      <defaultValue>'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDgxIiwicmVnaXN0cmF0aW9uX2lkIjoxNDgxLCJleHAiOjE3MjIyMTM5MDcsImlhdCI6MTcxODYxMzkwNywiYXV0aG9yaXR5IjoiTUFLRVJfUk9MRSJ9.QfVBEVdSrk3g30yfqiXD_2KxZYE74aBAM60V2janvLX2tyTz-wlxeA2D_oTBmyKsUBB9odVg7slI1eflWIMG6w'</defaultValue>
+      <description>eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDgxIiwicmVnaXN0cmF0aW9uX2lkIjoxNDgxLCJleHAiOjE3MjIxNTU5NDYsImlhdCI6MTcxODU1NTk0NiwiYXV0aG9yaXR5IjoiTUFLRVJfUk9MRSJ9.ALlFT0w8YZ5F4hYG-r9ormDS-EllvdrNCW5vLrJBBK9e6rX9TamFjGUvDktXkP7MEs2TnsLg80IUkOQcytMN7A</description>
+      <id>97eeabec-9fc0-40e3-be4a-ff16f1a4ae97</id>
       <masked>false</masked>
       <name>bearerToken</name>
    </variable>
    <variable>
       <defaultValue>'501'</defaultValue>
       <description></description>
-      <id>050ed0bf-abc4-4c2c-9e63-29e99a9337a6</id>
+      <id>9c1e19cf-e669-4309-a69c-057ee12d397f</id>
       <masked>false</masked>
       <name>province</name>
    </variable>
    <variable>
-      <defaultValue>'50109'</defaultValue>
+      <defaultValue>'50101'</defaultValue>
       <description></description>
-      <id>369256a8-52e0-4379-9112-e29dee085c1a</id>
+      <id>e000a1fe-fd43-4e62-9038-7ca53c1d7e63</id>
       <masked>false</masked>
       <name>district</name>
    </variable>
    <variable>
-      <defaultValue>'06005'</defaultValue>
+      <defaultValue>'06004'</defaultValue>
       <description></description>
-      <id>ba077c68-bb07-4a13-bcdb-e9399e164666</id>
+      <id>85284f34-97a6-4773-a6a0-381e4fccd92b</id>
       <masked>false</masked>
       <name>branch</name>
    </variable>
    <variable>
-      <defaultValue>''</defaultValue>
+      <defaultValue>'84390556680468'</defaultValue>
       <description></description>
-      <id>e7078ced-8065-4138-a68e-54b692d59b55</id>
+      <id>86baef8c-90cd-47bd-a14b-9b5e4f4a80c0</id>
       <masked>false</masked>
       <name>accountNumber</name>
    </variable>
    <variable>
-      <defaultValue>'RANDOM_ACCOUNT'</defaultValue>
-      <description></description>
-      <id>15d48ea2-9c83-4939-b2f8-950fae67a2d1</id>
+      <defaultValue>'SPECIAL_NUMBER'</defaultValue>
+      <description>RANDOM_ACCOUNT</description>
+      <id>32da3e61-a32e-4939-8813-94737d4749cf</id>
       <masked>false</masked>
       <name>accountType</name>
    </variable>

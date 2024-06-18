@@ -64,7 +64,7 @@
       <name>baseUrl</name>
    </variables>
    <variables>
-      <defaultValue>'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDgxIiwicmVnaXN0cmF0aW9uX2lkIjoxNDgxLCJleHAiOjE3MjIyMTM5MDcsImlhdCI6MTcxODYxMzkwNywiYXV0aG9yaXR5IjoiTUFLRVJfUk9MRSJ9.QfVBEVdSrk3g30yfqiXD_2KxZYE74aBAM60V2janvLX2tyTz-wlxeA2D_oTBmyKsUBB9odVg7slI1eflWIMG6w'</defaultValue>
+      <defaultValue>'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNjU3IiwicmVnaXN0cmF0aW9uX2lkIjoxNjU3LCJleHAiOjE3MjIzMzA4NTYsImlhdCI6MTcxODczMDg1NiwiYXV0aG9yaXR5IjoiTUFLRVJfUk9MRSJ9.yBnAJtFlLOVGUg7KWGv1hFEk5YmhVC6LAL4wQGlZgaVAC0CwNGE_f0waNvp3ix8nCspn20b0IFym_eNNxFMp6g'</defaultValue>
       <description></description>
       <id>5a520a33-688f-45d0-a088-de9ed0b08e90</id>
       <masked>false</masked>

@@ -18,8 +18,6 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonSlurper as JsonSlurper
 
-import groovy.json.JsonSlurper as JsonSlurper
-
 WebUI.callTestCase(findTestCase('API - Web/OTP/Send OTP'), [('baseUrl') : GlobalVariable.baseUrl, ('phone') : phone], FailureHandling.STOP_ON_FAILURE)
 
 def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Marker Login', [('baseUrl') : baseUrl, ('taxCode') : taxCode

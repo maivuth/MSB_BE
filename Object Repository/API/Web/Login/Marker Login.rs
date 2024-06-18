@@ -47,15 +47,15 @@
       <name>baseUrl</name>
    </variables>
    <variables>
-      <defaultValue>'5555923668'</defaultValue>
-      <description></description>
+      <defaultValue>'1808268039'</defaultValue>
+      <description>5555923668 </description>
       <id>d112cf59-969f-4555-9b77-54fa481afc07</id>
       <masked>false</masked>
       <name>taxCode</name>
    </variables>
    <variables>
-      <defaultValue>'8439055668'</defaultValue>
-      <description></description>
+      <defaultValue>'0123456799'</defaultValue>
+      <description>8439055668 </description>
       <id>7cf49ded-7ca0-4be5-ac89-66d464dae255</id>
       <masked>false</masked>
       <name>phone</name>
@@ -110,7 +110,7 @@ try {
 	boolean successful = WS.validateJsonAgainstSchema(response,jsPass)
 }
 catch(Exception e) {
-	WebUI.comment(&quot;API failed ${e.message()}&quot;)
+	throw &quot;API failed&quot;
 }</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

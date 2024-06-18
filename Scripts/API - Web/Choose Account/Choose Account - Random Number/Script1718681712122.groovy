@@ -16,4 +16,23 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import groovy.json.JsonSlurper as JsonSlurper
 
+WebUI.callTestCase(findTestCase('API - Web/OTP/Send OTP'), [('baseUrl') : GlobalVariable.baseUrl, ('phone') : phone], FailureHandling.STOP_ON_FAILURE)
+
+def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Marker Login', [('baseUrl') : baseUrl, ('taxCode') : taxCode
+            , ('phone') : phone, ('otp') : otp]))
+
+def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
+
+// Extract data from the JSON response
+bearerToken = jsonResponse.accessToken.toString()
+
+WebUI.comment(bearerToken.toString())
+
+def accountRes = WS.sendRequestAndVerify(findTestObject('API/Web/Choose Account/Create Registration Account', [('baseUrl') : GlobalVariable.baseUrl
+            , ('bearerToken') : bearerToken
+            , ('province') : province, ('district') : district, ('branch') : branch, ('accountNumber') : accountNumber, ('accountType') : accountType]))
+def accjsonResponse = new JsonSlurper().parseText(accountRes.getResponseText())
+
+WebUI.comment(accjsonResponse.toString())

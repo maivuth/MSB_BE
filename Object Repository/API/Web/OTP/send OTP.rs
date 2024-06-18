@@ -47,8 +47,8 @@
       <name>baseUrl</name>
    </variables>
    <variables>
-      <defaultValue>'8439055668'</defaultValue>
-      <description></description>
+      <defaultValue>'0123456799'</defaultValue>
+      <description>8439055668 </description>
       <id>3ab5673e-8488-4c18-8bff-cf3b57ea86c2</id>
       <masked>false</masked>
       <name>phone</name>
