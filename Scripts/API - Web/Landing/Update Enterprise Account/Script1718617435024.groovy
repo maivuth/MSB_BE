@@ -17,30 +17,31 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonSlurper as JsonSlurper
-/**
- * def loginResponse = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Marker Login', [('baseUrl') : GlobalVariable.baseUrl
-            , ('taxCode') : '5555923369', ('phone') : '8439555669', ('otp') : '123456']))
 
-def jsonResponse = new JsonSlurper().parseText(loginResponse.getResponseText())
+WebUI.callTestCase(findTestCase('API - Web/OTP/Send OTP'), [('baseUrl') : GlobalVariable.baseUrl, ('phone') : contactPersonPhone], 
+    FailureHandling.STOP_ON_FAILURE)
 
-WebUI.comment(jsonResponse.toString())
+def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Marker Login', [('baseUrl') : baseUrl, ('taxCode') : taxCode
+            , ('phone') : contactPersonPhone, ('otp') : otp]))
+
+def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
 
 // Extract data from the JSON response
 bearerToken = jsonResponse.accessToken.toString()
- */
 
+WebUI.comment(bearerToken.toString())
 
 WebUI.comment(bearerToken)
 
 WS.sendRequestAndVerify(findTestObject('API/Web/Landing/Update Enterprise Accounts', 
-	[('baseUrl') : GlobalVariable.baseUrl, 
+	[('baseUrl') : 'https://msb.kmsmoba.com/dev/api', 
 	 ('bearerToken') : bearerToken, 
-	 ('consent') : true, 
-	 ('taxCode') : '${taxCode}', 
-	 ('companyName') : '${companyName}', 
-	 ('contactPersonName') : '${contactPersonName}', 
-	 ('contactPersonPhone') : '${contactPersonPhone}', 
-	 ('contactPersonEmail') : '${contactPersonEmail}', 
-	 ('supportStaffEmail') : '${supportStaffEmail}', 
-	 ('openingAccountPurpose') : '${openingAccountPurpose}']))
+	 ('consent') : consent, 
+	 ('taxCode') : taxCode, 
+	 ('companyName') : companyName, 
+	 ('contactPersonName') : contactPersonName, 
+	 ('contactPersonPhone') : contactPersonPhone, 
+	 ('contactPersonEmail') : contactPersonEmail, 
+	 ('supportStaffEmail') : supportStaffEmail, 
+	 ('openingAccountPurpose') : openingAccountPurpose]))
 

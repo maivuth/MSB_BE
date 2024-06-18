@@ -16,6 +16,18 @@
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
+      <variableId>6b695220-fd8e-4ea6-8177-e19b4aef7e86</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>a83893cd-2b28-4681-bcd0-d6fec84d96ba</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
       <variableId>3494bc29-e6e1-4c6e-b14b-2d8ae37f822d</variableId>
    </variableLinks>
    <variableLinks>
@@ -68,6 +80,20 @@
       <name>baseUrl</name>
    </variable>
    <variable>
+      <defaultValue>GlobalVariable.otp</defaultValue>
+      <description></description>
+      <id>6b695220-fd8e-4ea6-8177-e19b4aef7e86</id>
+      <masked>false</masked>
+      <name>otp</name>
+   </variable>
+   <variable>
+      <defaultValue>true</defaultValue>
+      <description></description>
+      <id>a83893cd-2b28-4681-bcd0-d6fec84d96ba</id>
+      <masked>false</masked>
+      <name>consent</name>
+   </variable>
+   <variable>
       <defaultValue>'5655555550'</defaultValue>
       <description></description>
       <id>3494bc29-e6e1-4c6e-b14b-2d8ae37f822d</id>
@@ -86,7 +112,7 @@
       <description></description>
       <id>6ce5ebeb-f63b-451e-9da6-3a8ef7f7146a</id>
       <masked>false</masked>
-      <name>contactNameUpdate</name>
+      <name>contactPersonName</name>
    </variable>
    <variable>
       <defaultValue>'0909999000'</defaultValue>
