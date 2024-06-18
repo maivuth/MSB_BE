@@ -16,13 +16,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+import core.database.Postgresql
 
-def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Marker Login', [('baseUrl') : baseUrl
-            , ('taxCode') : taxCode, ('phone') : phone, ('otp') : otp]))
 
-WebUI.comment(response.toString())
-
-if (response.toString().contains('200')) {
-    WebUI.comment('API Passed')
-}
-
+String query = 'select * from registration_account'
+CustomKeywords.'core.database.Postgresql.executeSQL'('13.215.51.175', '5432', 'user', 'msbuat', 'msbuat', query)

@@ -18,13 +18,35 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonSlurper
 
-def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Admin Login', [('username') : username, ('password') : password
-            , ('baseUrl') : GlobalVariable.baseUrl]))
-WebUI.comment(response.toString())
+//Random taxCode and contactPhone
+taxCode = CustomKeywords.'com.msb.utils.StringHelper.randomNumber'('1000000000', '9999999999')
+contactPhone = CustomKeywords.'com.msb.utils.StringHelper.randomNumber'('1000000000', '9999999999')
+WebUI.comment(taxCode.toString())
+WebUI.comment(contactPhone.toString())
+
+def response = WS.sendRequest(findTestObject('API/Web/Landing/Create Enterprise account', 
+	[('baseUrl') : baseUrl,
+	 ('consent') : true, 
+	 ('taxCode') : taxCode, 
+	 ('companyName') : companyName, 
+	 ('contactName') : contactName, 
+	 ('contactPhone') : contactPhone, 
+	 ('contactEmail') : contactEmail, 
+	 ('supportEmail') : supportEmail, 
+	 ('openingPurpose') : openingPurpose]))
+
 def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
 WebUI.comment(jsonResponse.toString())
-// Extract data from the JSON response
-def bearerToken = jsonResponse.accessToken.toString()
-WebUI.comment(bearerToken)
-
-WS.sendRequestAndVerify(findTestObject('API/Web/Choose Account/Get provinces', [('baseUrl') : GlobalVariable.baseUrl, ('bearerToken') : bearerToken]))
+try{
+	if(WS.verifyResponseStatusCode(response, 200)) {
+		WebUI.comment('API Passed')
+		'Extract data from the JSON response'
+		def resId = jsonResponse.enterpriseAccount.id.toString()
+		WebUI.comment(resId)
+	}
+}
+catch(Exception e) {
+	WebUI.comment("API failed with error ${response.getStatusCode().toString()}")
+	WebUI.comment(jsonResponse.code.toString())
+	WebUI.comment(jsonResponse.message.toString())
+}

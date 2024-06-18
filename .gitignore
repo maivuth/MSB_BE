@@ -38,3 +38,4 @@ Apps/
 output
 !output/.gitkeep
 build
+*.prj

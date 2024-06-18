@@ -75,7 +75,7 @@
       <name>contactName</name>
    </variables>
    <variables>
-      <defaultValue>'8439555669'</defaultValue>
+      <defaultValue>'8439555668'</defaultValue>
       <description>contactPersonPhone</description>
       <id>a97e7f8e-0648-416b-b1ab-16ce487f7bef</id>
       <masked>false</masked>

@@ -64,7 +64,7 @@
       <name>baseUrl</name>
    </variables>
    <variables>
-      <defaultValue>'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDgxIiwicmVnaXN0cmF0aW9uX2lkIjoxNDgxLCJleHAiOjE3MjIxNTU5NDYsImlhdCI6MTcxODU1NTk0NiwiYXV0aG9yaXR5IjoiTUFLRVJfUk9MRSJ9.ALlFT0w8YZ5F4hYG-r9ormDS-EllvdrNCW5vLrJBBK9e6rX9TamFjGUvDktXkP7MEs2TnsLg80IUkOQcytMN7A'</defaultValue>
+      <defaultValue>'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDgxIiwicmVnaXN0cmF0aW9uX2lkIjoxNDgxLCJleHAiOjE3MjIyMTM5MDcsImlhdCI6MTcxODYxMzkwNywiYXV0aG9yaXR5IjoiTUFLRVJfUk9MRSJ9.QfVBEVdSrk3g30yfqiXD_2KxZYE74aBAM60V2janvLX2tyTz-wlxeA2D_oTBmyKsUBB9odVg7slI1eflWIMG6w'</defaultValue>
       <description></description>
       <id>5a520a33-688f-45d0-a088-de9ed0b08e90</id>
       <masked>false</masked>
@@ -104,7 +104,11 @@ String jsonPass =
       &quot;type&quot;: &quot;integer&quot;,
       &quot;minimum&quot;: 0
     }
-  }
+  },
+  &quot;required&quot;: [
+    &quot;taxCode&quot;,
+    &quot;contactPersonPhone&quot;
+  ]
 }
 &quot;&quot;&quot;
 boolean successful = WS.validateJsonAgainstSchema(response,jsonPass)

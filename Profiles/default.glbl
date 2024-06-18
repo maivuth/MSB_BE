@@ -9,4 +9,9 @@
       <initValue>'https://msb.kmsmoba.com/dev/api'</initValue>
       <name>baseUrl</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'111111'</initValue>
+      <name>otp</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

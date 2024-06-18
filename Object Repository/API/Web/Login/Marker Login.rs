@@ -47,21 +47,21 @@
       <name>baseUrl</name>
    </variables>
    <variables>
-      <defaultValue>'1234567891'</defaultValue>
+      <defaultValue>'5555923369'</defaultValue>
       <description></description>
       <id>d112cf59-969f-4555-9b77-54fa481afc07</id>
       <masked>false</masked>
       <name>taxCode</name>
    </variables>
    <variables>
-      <defaultValue>'5551234551'</defaultValue>
+      <defaultValue>'5655555550'</defaultValue>
       <description></description>
       <id>7cf49ded-7ca0-4be5-ac89-66d464dae255</id>
       <masked>false</masked>
       <name>phone</name>
    </variables>
    <variables>
-      <defaultValue>'123456'</defaultValue>
+      <defaultValue>'111111'</defaultValue>
       <description></description>
       <id>7ac56785-61aa-400e-8388-739fce9a7c9d</id>
       <masked>false</masked>
@@ -81,14 +81,13 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
-WS.verifyResponseStatusCode(response, 200)
 try {
-assertThat(response.getStatusCode()).isEqualTo(200)
-
-assertThat(response.getStatusCode()).isIn(Arrays.asList(200, 201, 202))
-
-String jsPass =
-&quot;&quot;&quot;
+	WS.verifyResponseStatusCode(response, 200)
+	
+	assertThat(response.getStatusCode()).isEqualTo(200)
+	
+	String jsPass =
+	&quot;&quot;&quot;
 {
   &quot;\$schema&quot;: &quot;http://json-schema.org/draft-07/schema#&quot;,
   &quot;title&quot;: &quot;Generated schema for Root&quot;,
@@ -107,10 +106,10 @@ String jsPass =
   ]
 };
 &quot;&quot;&quot;
-boolean successful = WS.validateJsonAgainstSchema(response,jsPass)
+	boolean successful = WS.validateJsonAgainstSchema(response,jsPass)
 }
 catch(Exception e) {
-	throw &quot;API invalid&quot;
+	throw &quot;API failed&quot;
 }</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
