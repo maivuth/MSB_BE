@@ -18,17 +18,21 @@ import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 import groovy.json.JsonSlurper as JsonSlurper
 
-//def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Marker Login', [('baseUrl') : baseUrl, ('taxCode') : taxCode
-//            , ('phone') : phone, ('otp') : otp]))
-//
-//def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
-//
-//// Extract data from the JSON response
-//def bearerToken = jsonResponse.accessToken.toString()
+//WebUI.callTestCase(findTestCase('API - Web/OTP/Send OTP'), [('baseUrl') : GlobalVariable.baseUrl, ('phone') : phone], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.comment(bearerToken.toString())
+def response = WS.sendRequestAndVerify(findTestObject('API/Web/Login/Marker Login', [('baseUrl') : baseUrl, ('taxCode') : taxCode
+            , ('phone') : phone, ('otp') : otp]))
 
-WS.sendRequestAndVerify(findTestObject('API/Web/Landing/Get Enterprise Accounts', 
-	[('baseUrl') : baseUrl, 
-	 ('bearerToken') : bearerToken]))
+WebUI.comment(response.toString())
+
+def jsonResponse = new JsonSlurper().parseText(response.getResponseText())
+
+WebUI.comment(jsonResponse.toString())
+
+// Extract data from the JSON response
+bearerToken = jsonResponse.accessToken.toString()
+
+WebUI.comment(bearerToken)
+
+WS.sendRequestAndVerify(findTestObject('API/Web/Choose Account/Get provinces', [('baseUrl') : GlobalVariable.baseUrl, ('bearerToken') : bearerToken]))
 

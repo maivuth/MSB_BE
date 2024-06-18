@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Choose Account - Special Number</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0d8c2a89-1a79-4ee8-8f0b-aa13e44cf4fe</testCaseGuid>
+</TestCaseEntity>

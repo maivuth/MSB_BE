@@ -219,7 +219,6 @@ try {
             &quot;contactPersonEmail&quot;,
             &quot;supportStaffEmail&quot;,
             &quot;openingAccountPurpose&quot;,
-            &quot;openingAccountPurpose&quot;,
             &quot;consent&quot;,
             &quot;registrationAccount&quot;
         ]

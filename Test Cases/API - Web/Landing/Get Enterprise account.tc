@@ -16,6 +16,12 @@
       <testDataLinkId></testDataLinkId>
       <type>DEFAULT</type>
       <value></value>
+      <variableId>0fb0111a-2374-41bf-9577-19b3b5e59276</variableId>
+   </variableLinks>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
       <variableId>ee880442-af06-4bd8-a20d-787a5c59f20a</variableId>
    </variableLinks>
    <variableLinks>
@@ -36,6 +42,13 @@
       <id>3c71d293-0c42-41b4-8d2a-5c4e1e2dcd59</id>
       <masked>false</masked>
       <name>baseUrl</name>
+   </variable>
+   <variable>
+      <defaultValue>'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNDgxIiwicmVnaXN0cmF0aW9uX2lkIjoxNDgxLCJleHAiOjE3MjIyMTM5MDcsImlhdCI6MTcxODYxMzkwNywiYXV0aG9yaXR5IjoiTUFLRVJfUk9MRSJ9.QfVBEVdSrk3g30yfqiXD_2KxZYE74aBAM60V2janvLX2tyTz-wlxeA2D_oTBmyKsUBB9odVg7slI1eflWIMG6w'</defaultValue>
+      <description></description>
+      <id>0fb0111a-2374-41bf-9577-19b3b5e59276</id>
+      <masked>false</masked>
+      <name>bearerToken</name>
    </variable>
    <variable>
       <defaultValue>'1234567891'</defaultValue>

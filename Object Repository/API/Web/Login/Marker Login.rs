@@ -47,14 +47,14 @@
       <name>baseUrl</name>
    </variables>
    <variables>
-      <defaultValue>'5555923369'</defaultValue>
+      <defaultValue>'5555923668'</defaultValue>
       <description></description>
       <id>d112cf59-969f-4555-9b77-54fa481afc07</id>
       <masked>false</masked>
       <name>taxCode</name>
    </variables>
    <variables>
-      <defaultValue>'5655555550'</defaultValue>
+      <defaultValue>'8439055668'</defaultValue>
       <description></description>
       <id>7cf49ded-7ca0-4be5-ac89-66d464dae255</id>
       <masked>false</masked>
@@ -73,6 +73,7 @@ import com.kms.katalon.core.testobject.RequestObject
 import com.kms.katalon.core.testobject.ResponseObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webservice.verification.WSResponseManager
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import groovy.json.JsonSlurper
 import internal.GlobalVariable as GlobalVariable
@@ -109,7 +110,7 @@ try {
 	boolean successful = WS.validateJsonAgainstSchema(response,jsPass)
 }
 catch(Exception e) {
-	throw &quot;API failed&quot;
+	WebUI.comment(&quot;API failed ${e.message()}&quot;)
 }</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>

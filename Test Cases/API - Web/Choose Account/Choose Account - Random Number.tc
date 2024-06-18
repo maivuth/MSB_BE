@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Choose Account - Random Number</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e82f91b2-e8e2-4eca-8dc3-1b7bb6097d01</testCaseGuid>
+</TestCaseEntity>

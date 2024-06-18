@@ -54,7 +54,7 @@
       <name>consent</name>
    </variables>
    <variables>
-      <defaultValue>'5555923369'</defaultValue>
+      <defaultValue>'5555923668'</defaultValue>
       <description>taxCode</description>
       <id>050048c5-e2e9-465e-95be-f9ebd5fe3e21</id>
       <masked>false</masked>
@@ -75,7 +75,7 @@
       <name>contactName</name>
    </variables>
    <variables>
-      <defaultValue>'8439555668'</defaultValue>
+      <defaultValue>'8439055668'</defaultValue>
       <description>contactPersonPhone</description>
       <id>a97e7f8e-0648-416b-b1ab-16ce487f7bef</id>
       <masked>false</masked>

@@ -85,33 +85,102 @@ RequestObject request = WSResponseManager.getInstance().getCurrentRequest()
 
 ResponseObject response = WSResponseManager.getInstance().getCurrentResponse()
 
+try {
+	WS.verifyResponseStatusCode(response, 200)
+	
+	assertThat(response.getStatusCode()).isEqualTo(200)
 
 String jsonPass =
 &quot;&quot;&quot;
 {
-  &quot;\$id&quot;: &quot;https://example.com/person.schema.json&quot;,
-  &quot;\$schema&quot;: &quot;https://json-schema.org/draft/2020-12/schema&quot;,
-  &quot;title&quot;: &quot;Person&quot;,
+  &quot;\$schema&quot;: &quot;http://json-schema.org/draft-07/schema#&quot;,
+  &quot;title&quot;: &quot;Generated schema for Root&quot;,
   &quot;type&quot;: &quot;object&quot;,
   &quot;properties&quot;: {
-    &quot;firstName&quot;: {
-      &quot;type&quot;: &quot;string&quot;
-    },
-    &quot;lastName&quot;: {
-      &quot;type&quot;: &quot;string&quot;
-    },
-    &quot;age&quot;: {
-      &quot;type&quot;: &quot;integer&quot;,
-      &quot;minimum&quot;: 0
-    }
-  },
+    &quot;enterpriseAccount&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;properties&quot;: {
+        &quot;id&quot;: {
+            &quot;type&quot;: &quot;number&quot;
+		},
+        &quot;taxCode&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+		},
+        &quot;companyName&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+		},
+        &quot;contactPersonName&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+		},
+        &quot;contactPersonPhone&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+		},
+        &quot;contactPersonEmail&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+		},
+        &quot;supportStaffEmail&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+		},
+        &quot;openingAccountPurpose&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+		},
+        &quot;consent&quot;: {
+            &quot;type&quot;: &quot;boolean&quot;
+		},
+        &quot;createdDate&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+		},
+        &quot;lastModifiedDate&quot;: {
+            &quot;type&quot;: &quot;string&quot;
+		},
+        &quot;registrationAccount&quot;: {
+            &quot;type&quot;: &quot;object&quot;,
+            &quot;properties&quot;: {
+                &quot;id&quot;: {
+                    &quot;type&quot;: &quot;number&quot;
+                },
+                &quot;province&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;district&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;branch&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;accountNumber&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                },
+                &quot;selectedAccountType&quot;: {
+                    &quot;type&quot;: &quot;string&quot;
+                }
+            }
+		},
+        &quot;required&quot;: [
+            &quot;id&quot;,
+            &quot;taxCode&quot;,
+            &quot;companyName&quot;,
+            &quot;contactPersonName&quot;,
+            &quot;contactPersonPhone&quot;,
+            &quot;contactPersonEmail&quot;,
+            &quot;supportStaffEmail&quot;,
+            &quot;openingAccountPurpose&quot;,
+            &quot;consent&quot;,
+            &quot;registrationAccount&quot;
+        ]
+      }
+		}
+},
   &quot;required&quot;: [
-    &quot;taxCode&quot;,
-    &quot;contactPersonPhone&quot;
+    &quot;enterpriseAccount&quot;
   ]
 }
 &quot;&quot;&quot;
 boolean successful = WS.validateJsonAgainstSchema(response,jsonPass)
-WebUI.comment(successful.toString())</verificationScript>
+WebUI.comment(successful.toString())
+}
+catch(Exception e) {
+	throw &quot;API failed&quot;
+}</verificationScript>
    <wsdlAddress></wsdlAddress>
 </WebServiceRequestEntity>
